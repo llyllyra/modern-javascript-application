@@ -2,27 +2,20 @@ import fetchWeather from "./fetchWeather.js";
 
 const input = document.getElementById("weatherSearch");
 const form = document.querySelector("form");
-let City
-
+let City;
 
 window.addEventListener("load", () => {
-    fetchWeather("namur");
+  fetchWeather("namur");
 });
 
-
 input.addEventListener("keyup", (e) => {
-    City = e.currentTarget.value.toLowerCase()
-
-
+  City = e.currentTarget.value.toLowerCase();
 });
 
 form.addEventListener("keypress", (e) => {
-
-    if (e.key === "Enter") {
-        fetchWeather(City);
-        e.preventDefault();
-        input.value = "";
-    }
-
-
+  if (e.key === "Enter") {
+    fetchWeather(City);
+    e.preventDefault();
+    input.value = "";
+  }
 });
